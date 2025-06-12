@@ -1,1 +1,6 @@
+runner.py
 .env
+*.spec
+build/
+dist/
+__pycache__/
