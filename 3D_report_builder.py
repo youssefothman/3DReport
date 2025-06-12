@@ -3,6 +3,10 @@ import json
 import re
 from urllib.request import urlopen
 from getSSL_cert_issuer import get_issuer
+import os
+
+whois_key = os.getenv("WHOIS_API_KEY")
+threatint_key = os.getenv("THREATINT_API_KEY")
 
 
 def switch(value):
@@ -152,8 +156,8 @@ domains = [line.strip() for line in lines]
 
 # Define API Calls
 domain_to_ip_api = f"https://api.threatintelligenceplatform.com/v1/infrastructureAnalysis?apiKey" \
-                   f"=at_wjKFvkN7iUpqywnneyMtRPquQ9TTw&domainName="
-whois_api = f"https://www.whoisxmlapi.com/whoisserver/WhoisService?apiKey=at_w5FxDIhFFkwqQdYdGs2tiszELl2R0" \
+                   f"={threatint_key}&domainName="
+whois_api = f"https://www.whoisxmlapi.com/whoisserver/WhoisService?apiKey={whois_key}" \
             f"&outputformat=JSON&domainName="
 
 # Open file to write CSV file
