@@ -4,3 +4,5 @@ runner.py
 build/
 dist/
 __pycache__/
+3D_v1.py
+3D_v2.py
